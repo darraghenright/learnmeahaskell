@@ -9,5 +9,8 @@
 -- 'z'
 
 myLast :: [a] -> a
-myLast (x:xs) = if null xs then x else myLast xs
+myLast [x] = x
+myLast (_:xs) = myLast xs
 
+main =
+    putStrLn $ show $ myLast [1]
